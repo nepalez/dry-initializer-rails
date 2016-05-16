@@ -40,7 +40,8 @@ $ gem install dry-initializer-rails
 
 ## Synopsis
 
-The gem adds the `:model` to `param` and `option`. This settings coerces values to corresponding ActiveRecord instances:
+The gem adds the `:model` to `param` and `option`.
+It coerces values to corresponding ActiveRecord instances:
 
 ```ruby
 require 'dry-initializer-rails'
@@ -50,7 +51,7 @@ class CreateOrder
 
   # Params and options
   param  :customer, model: 'Customer' # use either a name
-  option :product,  model: Product # or a class
+  option :product,  model: Product    # or a class
 
   def call
     Order.create customer: customer, product: product
@@ -58,7 +59,7 @@ class CreateOrder
 end
 ```
 
-Now you can either use pre-initialized model instances
+Now you can assign values as pre-initialized model instances:
 
 ```ruby
 customer = Customer.find(1)
@@ -69,7 +70,7 @@ order.customer # => <Customer @id=1 ...>
 order.product  # => <Product @id=2 ...>
 ```
 
-...or send their ids to the initializer with the same result:
+...or their ids:
 
 ```ruby
 order = CreateOrder.new(1, product: 2).call
@@ -77,7 +78,7 @@ order.customer # => <Customer @id=1 ...>
 order.product  # => <Product @id=2 ...>
 ```
 
-When `id` is set, the instance is envoked using `find_by(id: ...)`.
+The instance is envoked using method `find_by(id: ...)`.
 With wrong ids `nil` values are assigned to a corresponding params and options:
 
 ```ruby
@@ -95,7 +96,7 @@ class CreateOrder
   extend Dry::Initializer::Rails::Mixin
 
   param  :customer, model: 'User', find_by: 'name'
-  option :product,  model: 'Item', find_by: :name
+  option :product,  model: Item,   find_by: :name
 end
 ```
 
@@ -107,8 +108,6 @@ order = CreateOrder.new('Andrew', product: 'the_thing_no_123').call
 order.customer # => <User @name='Andrew' ...>
 order.product  # => <Item @name='the_thing_no_123' ...>
 ```
-
-Notice that `:model` and `:type` keys are exclusive: when `:model` is set, any `:type` constraint will be ignored.
 
 ## Contributing
 
