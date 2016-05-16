@@ -14,7 +14,7 @@
 [coveralls]: https://coveralls.io/r/dry-rb/dry-initializer-rails
 [inchpages]: http://inch-ci.org/github/dry-rb/dry-initializer-rails
 
-Rails plugin for [dry-initializer][dry-initializer]
+Rails plugin to [dry-initializer][dry-initializer]
 
 [dry-initializer]: https://github.com/dry-rb/dry-initializer
 
@@ -40,8 +40,9 @@ $ gem install dry-initializer-rails
 
 ## Synopsis
 
-The gem adds the `:model` to `param` and `option`.
-It coerces values to corresponding ActiveRecord instances:
+The gem provides value coercion to ActiveRecord instances.
+
+Add the `:model` setting to `param` or `option`:
 
 ```ruby
 require 'dry-initializer'
@@ -103,7 +104,7 @@ class CreateOrder
 end
 ```
 
-This time you can pass a name (not an id) to the initializer:
+This time you can pass names (not ids) to the initializer:
 
 ```ruby
 order = CreateOrder.new('Andrew', product: 'the_thing_no_123').call
@@ -111,6 +112,10 @@ order = CreateOrder.new('Andrew', product: 'the_thing_no_123').call
 order.customer # => <User @name='Andrew' ...>
 order.product  # => <Item @name='the_thing_no_123' ...>
 ```
+
+## Compatibility
+
+Tested under [MRI 2.2+](.travis.yml).
 
 ## Contributing
 
