@@ -67,7 +67,7 @@ Now you can assign values as pre-initialized model instances:
 customer = Customer.find(1)
 product  = Product.find(2)
 
-order = CreateOrder.new(cutomer, product: product).call
+order = CreateOrder.new(customer, product: product).call
 order.customer # => <Customer @id=1 ...>
 order.product  # => <Product @id=2 ...>
 ```
