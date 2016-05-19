@@ -1,18 +1,18 @@
 # dry-initializer-rails [![Join the chat at https://gitter.im/dry-rb/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dry-rb/chat)
 
 [![Gem Version](https://badge.fury.io/rb/dry-initializer-rails.svg)][gem]
-[![Build Status](https://travis-ci.org/dry-rb/dry-initializer-rails.svg?branch=master)][travis]
-[![Dependency Status](https://gemnasium.com/dry-rb/dry-initializer-rails.svg)][gemnasium]
-[![Code Climate](https://codeclimate.com/github/dry-rb/dry-initializer-rails/badges/gpa.svg)][codeclimate]
-[![Test Coverage](https://codeclimate.com/github/dry-rb/dry-initializer-rails/badges/coverage.svg)][coveralls]
-[![Inline docs](http://inch-ci.org/github/dry-rb/dry-initializer-rails.svg?branch=master)][inchpages]
+[![Build Status](https://travis-ci.org/nepalez/dry-initializer-rails.svg?branch=master)][travis]
+[![Dependency Status](https://gemnasium.com/nepalez/dry-initializer-rails.svg)][gemnasium]
+[![Code Climate](https://codeclimate.com/github/nepalez/dry-initializer-rails/badges/gpa.svg)][codeclimate]
+[![Test Coverage](https://codeclimate.com/github/nepalez/dry-initializer-rails/badges/coverage.svg)][coveralls]
+[![Inline docs](http://inch-ci.org/github/nepalez/dry-initializer-rails.svg?branch=master)][inchpages]
 
 [gem]: https://rubygems.org/gems/dry-initializer-rails
-[travis]: https://travis-ci.org/dry-rb/dry-initializer-rails
-[gemnasium]: https://gemnasium.com/dry-rb/dry-initializer-rails
-[codeclimate]: https://codeclimate.com/github/dry-rb/dry-initializer-rails
-[coveralls]: https://coveralls.io/r/dry-rb/dry-initializer-rails
-[inchpages]: http://inch-ci.org/github/dry-rb/dry-initializer-rails
+[travis]: https://travis-ci.org/nepalez/dry-initializer-rails
+[gemnasium]: https://gemnasium.com/nepalez/dry-initializer-rails
+[codeclimate]: https://codeclimate.com/github/nepalez/dry-initializer-rails
+[coveralls]: https://coveralls.io/r/nepalez/dry-initializer-rails
+[inchpages]: http://inch-ci.org/github/nepalez/dry-initializer-rails
 
 Rails plugin to [dry-initializer][dry-initializer]
 
@@ -119,7 +119,7 @@ Tested under [MRI 2.2+](.travis.yml).
 
 ## Contributing
 
-* [Fork the project](https://github.com/dry-rb/dry-initializer-rails)
+* [Fork the project](https://github.com/nepalez/dry-initializer-rails)
 * Create your feature branch (`git checkout -b my-new-feature`)
 * Add tests for it
 * Commit your changes (`git commit -am '[UPDATE] Add some feature'`)
