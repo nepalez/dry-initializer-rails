@@ -2,7 +2,7 @@
 language: ruby
 before_install: gem install bundler -v 1.11.2
 cache:    bundler
-script:   bundle  exec rspec
+script:   bundle exec rake
 rvm:
   - '2.2'
   - '2.3.0'
