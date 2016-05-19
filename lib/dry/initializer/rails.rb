@@ -8,6 +8,6 @@ module Dry::Initializer::Rails
   require_relative "rails/model"
 
   def self.extended(klass)
-    klass.initializer_builder.register Model
+    klass.register_initializer_plugin Model
   end
 end
