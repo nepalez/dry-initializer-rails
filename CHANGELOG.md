@@ -1,3 +1,7 @@
+## v0.0.3 2016-07-17
+
+Support dry-initializer v0.4+ (@nepalez)
+
 ## v0.0.2 2016-05-19
 
 Switch the gem to using dry-initializer v0.3+ (@nepalez)
