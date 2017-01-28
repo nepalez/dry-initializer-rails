@@ -49,8 +49,7 @@ require 'dry-initializer'
 require 'dry-initializer-rails'
 
 class CreateOrder
-  extend Dry::Initializer::Mixin
-  extend Dry::Initializer::Rails
+  extend Dry::Initializer
 
   # Params and options
   param  :customer, model: 'Customer' # use either a name
@@ -96,8 +95,7 @@ You can specify custom `key` for searching model instance:
 require 'dry-initializer-rails'
 
 class CreateOrder
-  extend Dry::Initializer::Mixin
-  extend Dry::Initializer::Rails
+  extend Dry::Initializer
 
   param  :customer, model: 'User', find_by: 'name'
   option :product,  model: Item,   find_by: :name
