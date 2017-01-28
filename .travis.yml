@@ -2,19 +2,15 @@
 language: ruby
 sudo: false
 cache: bundler
+before_install: gem install bundler --no-ri --no-rdoc
 bundler_args: --without benchmarks tools
 script:
   - bundle exec rake
+  - bundle exec rubocop
 rvm:
-  - 2.2
+  - 2.2.2
   - 2.3.0
-  - 2.4.0
   - ruby-head
-env:
-  global:
-    - JRUBY_OPTS='--dev -J-Xmx1024M'
 matrix:
   allow_failures:
     - rvm: ruby-head
-  include:
-      before_install: gem install bundler --no-ri --no-rdoc

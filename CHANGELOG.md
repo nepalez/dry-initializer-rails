@@ -1,12 +1,14 @@
+## v1.0.0 2017-01-28
+
+Update dependency to dry-initializer v1.1+ (nepalez)
+
 ## v0.0.3 2016-07-17
 
-Support dry-initializer v0.4+ (@nepalez)
+Support dry-initializer v0.4+ (nepalez)
 
 ## v0.0.2 2016-05-19
 
-Switch the gem to using dry-initializer v0.3+ (@nepalez)
-
-[Compare v0.0.1...v0.0.2](https://github.com/dry-rb/dry-initializer/compare/v0.0.1..v0.0.2)
+Update dependency to dry-initializer v0.3+ (nepalez)
 
 ## v0.0.1 2016-05-16
 
