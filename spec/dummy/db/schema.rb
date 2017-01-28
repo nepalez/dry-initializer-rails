@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -15,14 +14,12 @@ ActiveRecord::Schema.define(version: 20160509134900) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
+    t.index ["name"], name: "index_items_on_name"
   end
-
-  add_index "items", ["name"], name: "index_items_on_name"
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.index ["name"], name: "index_users_on_name"
   end
-
-  add_index "users", ["name"], name: "index_users_on_name"
 
 end

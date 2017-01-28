@@ -2,8 +2,7 @@ describe "assignment by custom key" do
   context "with mixin syntax" do
     before do
       class Test::Order
-        extend Dry::Initializer::Mixin
-        extend Dry::Initializer::Rails
+        extend Dry::Initializer
 
         param  :user,    model: "User", find_by: "name"
         option :product, model: Item,   find_by: :name
@@ -32,8 +31,6 @@ describe "assignment by custom key" do
     before do
       class Test::Order
         include Dry::Initializer.define -> do
-          extend Dry::Initializer::Rails
-
           param  :user,    model: "User", find_by: "name"
           option :product, model: Item,   find_by: :name
         end

@@ -13,8 +13,8 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = ">= 2.2"
 
-  gem.add_runtime_dependency "rails", "> 3.0", "< 5.0"
-  gem.add_runtime_dependency "dry-initializer", ">= 0.3.0"
+  gem.add_runtime_dependency "rails", "> 3.0"
+  gem.add_runtime_dependency "dry-initializer", "~> 1.1.0"
 
   gem.add_development_dependency "rspec", "~> 3.0"
   gem.add_development_dependency "rake", "> 10.0"

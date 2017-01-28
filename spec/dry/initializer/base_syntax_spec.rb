@@ -1,8 +1,7 @@
 describe "base syntax" do
   before do
     class Test::Foo
-      extend Dry::Initializer::Mixin
-      extend Dry::Initializer::Rails
+      extend Dry::Initializer
 
       param  :foo
       param  :bar

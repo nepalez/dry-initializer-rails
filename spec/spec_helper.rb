@@ -1,4 +1,4 @@
-require "dry/initializer/rails"
+require "dry-initializer-rails"
 require "pry"
 require "database_cleaner"
 

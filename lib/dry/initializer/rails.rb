@@ -1,13 +1,18 @@
 require "dry-initializer"
 require "rails"
 
-# Rails plugin to dry-initializer gem
-module Dry::Initializer::Rails
-  extend Dry::Initializer::Mixin
+# Define a dispatcher for `:model` and `:find_by` options
+rails_dispatcher = lambda do |model: nil, find_by: :id, **options|
+  return options unless model
 
-  require_relative "rails/model"
-
-  def self.extended(klass)
-    klass.register_initializer_plugin Model
+  model   = model.constantize if model.is_a? String
+  coercer = lambda do |value|
+    return value if value.instance_of? model
+    model.find_by(find_by => value)
   end
+
+  options.merge(type: coercer)
 end
+
+# Register a dispatcher
+Dry::Initializer::Attribute.dispatchers << rails_dispatcher

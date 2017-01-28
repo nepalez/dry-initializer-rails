@@ -1,8 +1,7 @@
 describe "assignment by model" do
   before do
     class Test::Order
-      extend Dry::Initializer::Mixin
-      extend Dry::Initializer::Rails
+      extend Dry::Initializer
 
       param  :user,    model: "User"
       option :product, model: Item
