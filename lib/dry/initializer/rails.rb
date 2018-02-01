@@ -15,4 +15,4 @@ rails_dispatcher = lambda do |model: nil, find_by: :id, **options|
 end
 
 # Register a dispatcher
-Dry::Initializer::Attribute.dispatchers << rails_dispatcher
+Dry::Initializer::Dispatchers << rails_dispatcher
