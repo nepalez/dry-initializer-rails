@@ -3,13 +3,23 @@ AllCops:
   DisplayCopNames:    true
   DisplayStyleGuide:  true
   StyleGuideCopsOnly: true
-  TargetRubyVersion:  2.2
+  TargetRubyVersion:  2.3
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
 
 Metrics/LineLength:
   Exclude:
     - spec/dummy/db/schema.rb
 
+Naming/FileName:
+  Exclude:
+    - 'lib/dry-initializer-rails.rb'
+
 Style/CaseEquality:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/ClassVars:
@@ -17,10 +27,6 @@ Style/ClassVars:
 
 Style/DoubleNegation:
   Enabled: false
-
-Style/FileName:
-  Exclude:
-    - 'lib/dry-initializer-rails.rb'
 
 Style/Lambda:
   Exclude:

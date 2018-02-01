@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160509134900) do
-
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.index ["name"], name: "index_items_on_name"
@@ -21,5 +20,4 @@ ActiveRecord::Schema.define(version: 20160509134900) do
     t.string "name"
     t.index ["name"], name: "index_users_on_name"
   end
-
 end
