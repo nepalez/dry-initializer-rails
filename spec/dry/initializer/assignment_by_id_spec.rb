@@ -18,10 +18,13 @@ describe "assignment by id" do
     expect(subject.product).to eql item
   end
 
-  it "works when records are absent" do
-    subject = Test::Order.new(0, product: 0)
+  it "raises when records are absent" do
+    subject = Test::Order.new(user.id, product: item.id)
 
-    expect(subject.user).to be_nil
-    expect(subject.product).to be_nil
+    expect { Test::Order.new(0, product: item) }
+      .to raise_error ActiveRecord::RecordNotFound
+
+    expect { Test::Order.new(user, product: 0) }
+      .to raise_error ActiveRecord::RecordNotFound
   end
 end
