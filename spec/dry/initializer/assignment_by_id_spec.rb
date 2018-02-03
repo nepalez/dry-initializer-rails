@@ -19,7 +19,7 @@ describe "assignment by id" do
   end
 
   it "raises when records are absent" do
-    subject = Test::Order.new(user.id, product: item.id)
+    Test::Order.new(user.id, product: item.id)
 
     expect { Test::Order.new(0, product: item) }
       .to raise_error ActiveRecord::RecordNotFound

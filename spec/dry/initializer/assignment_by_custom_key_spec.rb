@@ -20,7 +20,7 @@ describe "assignment by custom key" do
     end
 
     it "raises when records are absent" do
-      subject = Test::Order.new("Dude", product: "The thing")
+      Test::Order.new("Dude", product: "The thing")
 
       expect { Test::Order.new("Man", product: "The thing") }
         .to raise_error ActiveRecord::RecordNotFound

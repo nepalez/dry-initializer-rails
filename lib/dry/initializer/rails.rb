@@ -7,7 +7,7 @@ rails_dispatcher = lambda do |model: nil, find_by: :id, **options|
 
   model   = model.constantize if model.is_a? String
   coercer = lambda do |value|
-    return value if value.instance_of?(model)
+    return value if value.nil? || value.instance_of?(model)
     model.find_by! find_by => value
   end
 
