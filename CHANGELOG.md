@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.1.0] [2018-02-12]
+- support `ActiveRecord::Relation` in models (nepalez)
+
+  ```ruby
+  param :user, model: User.where(active: true)
+  ```
+
 ## [3.0.0] [2018-02-01]
 
 ### Changed
@@ -38,3 +45,4 @@ First public release
 [1.0.0]: https://github.com/nepalez/dry-initializer-rails/compare/v0.0.3...v1.0.0
 [2.0.0]: https://github.com/nepalez/dry-initializer-rails/compare/v1.0.0...v2.0.0
 [3.0.0]: https://github.com/nepalez/dry-initializer-rails/compare/v2.0.0...v3.0.0
+[3.1.0]: https://github.com/nepalez/dry-initializer-rails/compare/v3.0.0...v3.1.0

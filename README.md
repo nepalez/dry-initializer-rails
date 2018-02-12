@@ -52,11 +52,12 @@ class CreateOrder
   extend Dry::Initializer
 
   # Params and options
-  param  :customer, model: 'Customer' # use either a name
-  option :product,  model: Product    # or a class
+  param  :customer, model: 'Customer'                 # use either a name
+  option :product,  model: Product                    # or a class
+  option :coupon,   model: Coupon.where(active: true) # or relation
 
   def call
-    Order.create customer: customer, product: product
+    Order.create customer: customer, product: product, coupon: coupon
   end
 end
 ```
@@ -64,29 +65,30 @@ end
 Now you can assign values as pre-initialized model instances:
 
 ```ruby
-customer = Customer.find(1)
-product  = Product.find(2)
+customer = Customer.create(id: 1)
+product  = Product.create(id: 2)
+coupon   = Coupon.create(id: 3, active: true)
 
-order = CreateOrder.new(customer, product: product).call
-order.customer # => <Customer @id=1 ...>
-order.product  # => <Product @id=2 ...>
+order = CreateOrder.new(customer, product: product, coupon: coupon).call
+order.customer # => #<Customer @id=1 ...>
+order.product  # => #<Product @id=2 ...>
+order.coupon   # => #<Coupon @id=3 ...>
 ```
 
 ...or their ids:
 
 ```ruby
-order = CreateOrder.new(1, product: 2).call
-order.customer # => <Customer @id=1 ...>
-order.product  # => <Product @id=2 ...>
+order = CreateOrder.new(1, product: 2, coupon: 3).call
+order.customer # => #<Customer @id=1 ...>
+order.product  # => #<Product @id=2 ...>
+order.coupon   # => #<Coupon @id=3 ...>
 ```
 
-The instance is envoked using method `find_by(id: ...)`.
-With wrong ids `nil` values are assigned to a corresponding params and options:
+The instance is envoked using method `find_by!(id: ...)`.
 
 ```ruby
-order = CreateOrder.new(0, product: 0).call
-order.customer # => nil
-order.product  # => nil
+order = CreateOrder.new(1, product: 2, coupon: 4).call
+# raises #<ActiveRecord::RecordNotFound>
 ```
 
 You can specify custom `key` for searching model instance:
