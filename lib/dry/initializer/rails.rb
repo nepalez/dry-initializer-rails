@@ -5,9 +5,11 @@ require "rails"
 rails_dispatcher = lambda do |model: nil, find_by: :id, **options|
   return options unless model
 
-  model   = model.constantize if model.is_a? String
+  model = eval(model) if model.is_a? String
+  klass = model.is_a?(ActiveRecord::Relation) ? model.klass : model
+
   coercer = lambda do |value|
-    return value if value.nil? || value.instance_of?(model)
+    return value if value.nil? || value.is_a?(klass)
     model.find_by! find_by => value
   end
 
