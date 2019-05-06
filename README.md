@@ -2,14 +2,12 @@
 
 [![Gem Version](https://badge.fury.io/rb/dry-initializer-rails.svg)][gem]
 [![Build Status](https://travis-ci.org/nepalez/dry-initializer-rails.svg?branch=master)][travis]
-[![Dependency Status](https://gemnasium.com/nepalez/dry-initializer-rails.svg)][gemnasium]
 [![Code Climate](https://codeclimate.com/github/nepalez/dry-initializer-rails/badges/gpa.svg)][codeclimate]
 [![Test Coverage](https://codeclimate.com/github/nepalez/dry-initializer-rails/badges/coverage.svg)][coveralls]
 [![Inline docs](http://inch-ci.org/github/nepalez/dry-initializer-rails.svg?branch=master)][inchpages]
 
 [gem]: https://rubygems.org/gems/dry-initializer-rails
 [travis]: https://travis-ci.org/nepalez/dry-initializer-rails
-[gemnasium]: https://gemnasium.com/nepalez/dry-initializer-rails
 [codeclimate]: https://codeclimate.com/github/nepalez/dry-initializer-rails
 [coveralls]: https://coveralls.io/r/nepalez/dry-initializer-rails
 [inchpages]: http://inch-ci.org/github/nepalez/dry-initializer-rails

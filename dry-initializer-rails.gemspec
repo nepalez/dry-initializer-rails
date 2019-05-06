@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name     = "dry-initializer-rails"
-  gem.version  = "3.1.0"
+  gem.version  = "3.1.1"
   gem.author   = ["Vladimir Kochnev (marshall-lee)", "Andrew Kozin (nepalez)"]
   gem.email    = ["andrew.kozin@gmail.com"]
   gem.homepage = "https://github.com/nepalez/dry-initializer-rails"
@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = ">= 2.3"
 
   gem.add_runtime_dependency "rails", "> 3.0"
-  gem.add_runtime_dependency "dry-initializer", "~> 2.4"
+  gem.add_runtime_dependency "dry-initializer", ">= 2.4", "< 4"
 
   gem.add_development_dependency "rspec", "~> 3.0"
   gem.add_development_dependency "rake", "> 10.0"

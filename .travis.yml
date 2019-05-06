@@ -1,15 +1,13 @@
 ---
 language: ruby
-sudo: false
 cache: bundler
-before_install: gem install bundler --no-ri --no-rdoc
 bundler_args: --without benchmarks tools
 script:
-  - bundle exec rake
+  - bundle exec rake spec
   - bundle exec rubocop
 rvm:
   - 2.3.0
-  - 2.4.0
+  - 2.6.2
   - ruby-head
 matrix:
   allow_failures:
