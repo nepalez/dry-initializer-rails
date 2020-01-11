@@ -9,6 +9,10 @@ rails_dispatcher = lambda do |model: nil, find_by: :id, **options|
   klass = model.is_a?(ActiveRecord::Relation) ? model.klass : model
 
   coercer = lambda do |value|
+    if value.is_a?(ActiveRecord::Base) && !value.instance_of?(klass)
+      raise "Value `#{value}` is not instance of `#{klass}`"
+    end
+
     return value if value.nil? || value.is_a?(klass)
     model.find_by! find_by => value
   end
