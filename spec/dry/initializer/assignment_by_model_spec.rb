@@ -8,13 +8,22 @@ describe "assignment by model" do
     end
   end
 
-  let!(:user) { User.create name: "Dude" }
-  let!(:item) { Item.create name: "The thing" }
+  let(:user) { User.create name: "Dude" }
+  let(:item) { Item.create name: "The thing" }
+
+  subject(:service) { Test::Order.new(user, product: item) }
 
   it "works" do
-    subject = Test::Order.new(user, product: item)
-
     expect(subject.user).to eql user
     expect(subject.product).to eql item
+  end
+
+  context "when option is not instance of class" do
+    let(:item) { User.create name: "NotAnItem" }
+
+    it "rejects" do
+      expect { service }
+        .to raise_error(ArgumentError, "Value `User` is not instance of `Item`")
+    end
   end
 end
